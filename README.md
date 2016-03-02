@@ -13,17 +13,18 @@ the square brackets (for multiple-choice questions).
 
 ### Question #1
 
-What are constructor functions and the new keyword? What is a prototype? Describe an example of when we would use a constructor function versus a prototype.
+What are constructor functions and the `new` keyword? What is a prototype? Describe an example of when we would use a constructor function versus a prototype.
 
 Your Answer:
 ```text
+
 ```
 
 ### Question #2
 
-Define a Javascript constructor called 'Instructor'. Every instance of Instructor should have a name property, and a method called givesHomework. This method takes one argument called assignment and, when executed, console-logs "[name] gives the students [assignment] for Friday's homework."
+Define a Javascript constructor called 'Instructor'. Every instance of Instructor should have a `name` property, and a method called `givesHomework`. This method takes one argument called `assignment` and, when executed, console-logs "[name] gives the students [assignment] for Friday's homework."
 
-Instantiate an instructor named 'Robin' and call its givesHomework method with "Intro to Ruby" as the argument.
+Instantiate an instructor named 'Robin' and call its `givesHomework` method with "Intro to Ruby" as the argument.
 
 Your Answer:
 
@@ -50,11 +51,11 @@ Your Answer:
 
 ### Question #4
 
-Describe the importance of using object oriented programming.
+Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-// write code here
+// your answer here
 ```
 
 ## jQuery
@@ -68,15 +69,15 @@ Select all that apply:
 [] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
 [] `$(".post").html()`
-[] `document.getElementsByClassName("post")[0].innerHTML`
-[] `document.getElementsByClassName("post").innerHTML`
+[] `document.querySelectorAll(".post")[0].innerHTML`
+[] `document.querySelectorAll(".post").innerHTML`
 ```
 
 ### Question #6
 
 Using jQuery, add an event listener for clicks on the button with the id
-'greeting'. When the event happens, the code should append a paragraph to the
-body, that says "hello".
+`greeting`. When the event happens, the code should append a paragraph to the
+body that says "hello".
 
 Your Answer:
 ```js
@@ -86,8 +87,7 @@ Your Answer:
 ### Question #7
 
 Define a function called `doSomething`. It should take one argument, called
-`thingToDo`. When called, `doSomething` should invoke the function given as an
-argument. Finally, demonstrate calling `doSomething` with a function.
+`thingToDo`. When called, `doSomething` should invoke the `thingToDo` function. Demonstrate calling `doSomething` while passing in an argument.
 
 Your Answer:
 ```js
@@ -96,9 +96,7 @@ Your Answer:
 
 ### Question #8
 
-Write the following function twice in both Vanilla JS and in jQuery.
-
-The function will add an event listener that alerts a user "Great Job on Quiz 4!", when a button with a class of "submit-quiz" is clicked.
+Once in Vanilla JS, and once in jQuery, write a function that adds an event listener for when a button with a class of "submit-quiz" is clicked. The event alerts a user "Great Job on Quiz 4!".
 
 Your Answer:
 ```js
