@@ -17,7 +17,11 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
+A constructor function runs as soon as the function is called, with or without `new`. The `new` keyword calls the function and returns a new object that has the methods and properties of the function's `prototype`.
 
+A prototype is an object, the properties and methods of which other objects inherit.
+
+You would use a constructor when you want a piece of code to run every time you create a new instance of a particular kind of object.
 ```
 
 ### Question #2
@@ -29,8 +33,12 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
-
+function Instructor(){
+  this.name;
+  this.givesHomework = function(assignment){
+    console.log(this.name + " gives the students " + assignment + " for Friday's homework.");
+  }
+}
 ```
 ### Question #3
 
@@ -46,7 +54,9 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+Panda.prototype.eat_bamboo = function(){
+  this.num_bamboo_eaten += 1;
+}
 ```
 
 ### Question #4
@@ -55,7 +65,7 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-// your answer here
+OOP forces you to encapsulate your code: break processes up into specific sub-processes that all interact with each other. Object-oriented code is often easier to read and easier to import without breaking existing code.
 ```
 
 ## jQuery
@@ -66,10 +76,10 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[x] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
+[x] `$(".post").html()`
+[x] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
 
@@ -81,7 +91,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$("#greeting").on("click", function(){
+  $("body").append("<p>hello</p>");
+});
 ```
 
 ### Question #7
@@ -91,7 +103,12 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+function doSomething(thingToDo){
+  thingToDo();
+}
+doSomething(function(){
+  alert("Yay!");
+});
 ```
 
 ### Question #8
@@ -100,5 +117,14 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+// Vanilla JS
+var button = document.querySelector(".submit-quiz");
+button.addEventListener("click", function(){
+  alert("Great job on Quiz 4!");
+});
+
+// jQuery
+$(".submit-quiz").on("click", function(){
+  alert("Great job on Quiz 4!");
+});
 ```
