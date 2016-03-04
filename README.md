@@ -16,8 +16,30 @@ the square brackets (for multiple-choice questions).
 What are constructor functions and the `new` keyword? What is a prototype? Describe an example of when we would use a constructor function versus a prototype.
 
 Your Answer:
-```text
+```
+Constructor functions is used in OOP to make an object type. You can create one object and use the new keyword to add  multiple objects of this one "type". The function name starts w a capital letter.
 
+The new keyword is used in the constructor function to tell Javascript that you are calling the constructor function and it will automatically  create a new empty object and return the object.
+
+An example is:
+function Band() {
+  this.name = "";
+  this.genre = "";
+}
+
+var chrvches = new Band("chrvches")
+
+chrvches.name  would return chrvches
+-----
+prototypes are similar to constructor functions and actually use constructors but it does not duplicate the data. All Javascript objects have a prototype and points to another object. It inherits the property from the Javascript object. However you are able to add properties using prototypes.
+example:
+Band.prototype.albums = "Every Open Eye";
+
+
+I would use a constructor function when
+
+
+versus in this instance where I would use a prototype instead:
 ```
 
 ### Question #2
@@ -29,7 +51,12 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor(name){
+  this.name = "";
+  givesHomework = ""
+  
+
+}
 
 ```
 ### Question #3
