@@ -33,12 +33,14 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-function Instructor(){
-  this.name;
+function Instructor(name){
+  this.name = name;
   this.givesHomework = function(assignment){
     console.log(this.name + " gives the students " + assignment + " for Friday's homework.");
   }
 }
+var robz = new Instructor("Robin");
+robz.givesHomework("Intro to Ruby");
 ```
 ### Question #3
 
