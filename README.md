@@ -81,23 +81,27 @@ Panda.prototype.eat_bamboo = function() {
 Describe the importance of using object-oriented programming.
 
 Your Answer:
-```js
-// your answer here
+```text
+Object-oriented programming enables us to clean up our procedural code and it helps us to achieve the following:
+
+Abstraction- establishing a level of complexity on which a person interacts with the system, suppressing the more complex details below the current level.
+Encapsulation- language mechanism for restricting access to some of the object's components/protecting the objects other code.
+Modularity- the degree to which a system's components may be separated and recombined.
 ```
 
 ## jQuery
 
 ### Question #5
 
-Which of the following statements will work, assuming jQuery is loaded?
+Which of the following statements will work, assuming jQuery is loaded? **What do you mean by work? The last option does not return an error, but it is also undefined.**
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
-[] `document.querySelectorAll(".post").innerHTML`
+[X] `$(".post").html()`
+[X] `document.querySelectorAll(".post")[0].innerHTML`
+[] `document.querySelectorAll(".post").innerHTML` no error, BUT this one is undefined.
 ```
 
 ### Question #6
