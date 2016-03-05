@@ -70,7 +70,10 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+Panda.prototype.eat_bamboo = function() {
+  this.num_bamboo_eaten += 1;
+  return this.num_bamboo_eaten;
+}
 ```
 
 ### Question #4
