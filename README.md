@@ -16,7 +16,12 @@ the square brackets (for multiple-choice questions).
 What are constructor functions and the `new` keyword? What is a prototype? Describe an example of when we would use a constructor function versus a prototype.
 
 Your Answer:
-```text
+```
+Constructor function is a special function that is used when we'll be creating multiple objects that are similar and have most of the same properties. Constructor function is basically a template for an object.
+
+When we call "new Constructor()" it creates a prototype based off the constructor function and it saves memory since those properties aren't all individually stored within each object, they share with and from the constructor.
+
+If we wanted every person in WDI-8 to be an object we could create a constructor function with properties that all students share (name, age, height, etc...) and then create prototypes for each student.
 
 ```
 
@@ -29,7 +34,17 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+
+function Instructor(name) {
+  this.name = name;
+  this.givesHomework = function(assignment) {
+    console.log(this.name + " gives the students " + assignment + " for Fridays homework.")
+  }
+}
+
+Robin = new Instructor("Robin")
+
+Robin.givesHomework("Intro to Ruby")
 
 ```
 ### Question #3
@@ -42,11 +57,22 @@ var Panda = function(name, age) {
   this.name = name;
   this.age = age;
   this.num_bamboo_eaten = 0;
+  this.eat_bamboo = function() {
+    this.num_bamboo_eaten++
+  }
 }
 ```
 Your Answer:
 ```js
-// your code here
+
+var Panda = function(name, age) {
+  this.name = name;
+  this.age = age;
+  this.num_bamboo_eaten = 0;
+  this.eat_bamboo = function() {
+    this.num_bamboo_eaten++
+  }
+}
 ```
 
 ### Question #4
@@ -55,7 +81,9 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-// your answer here
+
+OOP helps to organize and standardize.  This helps when reviewing other peoples code and being able to more quickly figure out what they are doing.  Combining the functions with the data makes it easier to understand.
+
 ```
 
 ## jQuery
@@ -66,9 +94,9 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[x] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[x] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
@@ -81,7 +109,12 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+
+$("#greeting").on("click", function(){
+  newParagraph = $("p").append("hello")
+  $("body").append(newParagraph)
+})
+
 ```
 
 ### Question #7
@@ -91,7 +124,11 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+
+var doSomething = function("thingToDo") {
+  alert("Go " + thingToDo)
+}
+
 ```
 
 ### Question #8
@@ -100,5 +137,13 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+
+button = document.body.querySelector(".submit-quiz")
+button.addEventListener("click", quiz4)
+
+$(".submit-quiz").on("click", quiz4)
+
+var quiz4 = function() {
+  alert("Great Job on Quiz 4!")
+}
 ```
