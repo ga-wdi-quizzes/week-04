@@ -18,6 +18,9 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 Your Answer:
 ```text
 
+An object constructor function is used to create an object that can be used many times without recreating the object each time. The 'new' operator calls the object constructor. Prototypes are a type of inheritance in Javascript. Prototypes are basically methods that are attached to an object after it is defined.
+
+An example of when I would use an object constructor is if I needed to create an object with properties and methods than can be applied to many 'new' animal operators. Then if I wanted to add a method such as canSwim or canFly, I would create a prototype with a method that answers this question.
 ```
 
 ### Question #2
@@ -29,7 +32,15 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor(name){
+  this.name = name;
+  this.givesHomework = function(assignment){
+    console.log(this.name + " gives the students " + assignment + " for Friday's homework.");
+  };
+}
+
+var robin = new Instructor("Robin");
+robin.givesHomework("Intro to Ruby");
 
 ```
 ### Question #3
@@ -46,7 +57,20 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+var Panda = function(name, age) {
+  this.name = name;
+  this.age = age;
+  this.num_bamboo_eaten = 0;
+  this.eat_bamboo = function(){
+      this.num_bamboo_eaten +=1;
+      return this.num_bamboo_eaten;
+  };
+};
+
+var meimei = new Panda("meimei", 1);
+meimei.eat_bamboo();
+
+console.log(meimei);
 ```
 
 ### Question #4
@@ -54,8 +78,8 @@ Your Answer:
 Describe the importance of using object-oriented programming.
 
 Your Answer:
-```js
-// your answer here
+```text
+OOP is important because it helps prevent code duplication. Also, if you want to change the names of certain variables, it makes it a lot easier through OOP. OOP helps with keeping code looking organized as well.
 ```
 
 ## jQuery
@@ -66,11 +90,11 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
-[] `document.querySelectorAll(".post").innerHTML`
+[X] `$(".post").html()`
+[X] `document.querySelectorAll(".post")[0].innerHTML`
+[X] `document.querySelectorAll(".post").innerHTML`
 ```
 
 ### Question #6
@@ -81,7 +105,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$("#greeting").click(function(){
+  $("body").append("<p>hello</p>");
+})
 ```
 
 ### Question #7
@@ -91,7 +117,11 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+var doSomething = function(thingToDo){
+  console.log("I need to " + thingToDo);
+}
+
+doSomething("feed the dog");
 ```
 
 ### Question #8
@@ -100,5 +130,15 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+
+// jQuery
+$(".submit-quiz").click(function(){
+  alert("Great Job on Quiz 4!");
+})
+
+// Vanilla JS
+document.querySelectorAll('.submit-quiz').onclick = function(){
+  alert("Great Job on Quiz 4!");
+}
+
 ```
