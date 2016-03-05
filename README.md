@@ -17,7 +17,7 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
-
+<!-- We use constructor functions to easily create and model different objects that share the same properties. It uses the keyword "this" to create a new object. The 'new' keyword is used to create a new object for that method, and the 'new' keyword calls the constructor function for the new object. We use a prototype when we want the new object to automatically take the properties of the original objects and do not want to rewrite code for the new object (and take up a lot of memory.) -->
 ```
 
 ### Question #2
@@ -29,7 +29,14 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor (name) {
+  this.name = name
+  this.givesHomework = function(argument) {
+    console.log( this.name + "gives the students " + assignment + " for Friday's homework.");
+  }
+}
+var quiz = new Instructor ("Robin");
+quiz.givesHomework("Intro to Ruby");
 
 ```
 ### Question #3
@@ -46,7 +53,11 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+
+Panda.prototype.eat_bamboo = function(){
+  this.num_bamboo_eaten +=1;
+}
+
 ```
 
 ### Question #4
@@ -55,7 +66,7 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-// your answer here
+We use object oriented programming in order to make our code dry, eliminate repetition and generally simplify our code so that it does not take up as much space and memory by repeating the same cody in each instance. object-oriented programming allows us to use abstraction, encapsulation and modularity.
 ```
 
 ## jQuery
@@ -66,9 +77,9 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[X] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
