@@ -17,6 +17,22 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
+The constructor function allows us to make multiple objects with the same keys, but then each object can have varying values that are passed in as arguments. The `new` keyword is used with the name of the constructor to create new objects with similar properties. A prototype is used for methods and values that will be identical across objects. This way, when a new object is created, the prototype properties can be applied without rewriting the code again and again.
+
+For example, if I wanted to make objects with different students, I could write the following:
+```
+```js
+function Student(name, age, hometown) {
+  this.name = name;
+  this.age = age;
+  this.hometown= hometown;
+}
+var christine = new Student("Christine", 24, "Washington DC");
+var erin = new Student("Erin", 25, "Gaithersburg");
+//The constructor contains all of the properties that can change across students.
+
+Student.prototype.sayHi = function() { return "Hi, I'm " + this.name + ".";}
+//The prototype is used for methods and values that will be the same across objects.
 
 ```
 
@@ -29,7 +45,15 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor(name, assignment) {
+  this.name = name;
+  this.givesHomework = function(assignment) {
+    console.log(this.name + " gives the students " + assignment + " for Friday's homework." );
+  }
+}
+
+var robin = new Instructor("Robin");
+robin.givesHomework("Intro to Ruby");
 
 ```
 ### Question #3
