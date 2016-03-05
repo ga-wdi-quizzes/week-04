@@ -92,7 +92,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$(#greeting).on("click", function(){
+  $('body').append(<p>Hello</p>);
+});
 ```
 
 ### Question #7
@@ -102,7 +104,12 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+function doSomething(thingToDo){
+ thingToDo();
+}
+doSomething(function(){
+  console.log("I'm doing something!");
+});
 ```
 
 ### Question #8
