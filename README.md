@@ -138,5 +138,10 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+document.querySelector(".submit-quiz").addEventListener("click", function() {
+  alert("Great Job on Quiz 4!");
+});
+$(".submit-quiz").on("click", function() {
+  alert("Great Job on Quiz 4!");
+});
 ```
