@@ -17,7 +17,7 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
-
+Constructor functions are used to create new objects in JavaScript.  The 'new' keyword is used when creating a new instance of the constructor object.  Prototypes are properties that exist on all functions and define what properties and methods are available to the object.  
 ```
 
 ### Question #2
@@ -29,8 +29,15 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor(){
+  this.name: name,
+  this.givesHomework: function(assignment){
+    console.log(this.name + "gives the students " + assignment + " for Friday's homework.");
+  }
+}
 
+var robin = new Instructor("Robin");
+robin.givesHomework("Intro to Ruby");
 ```
 ### Question #3
 
@@ -46,7 +53,7 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+
 ```
 
 ### Question #4
@@ -55,7 +62,7 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-// your answer here
+Using OOP is important because it allows developers to encapsulate their code.  This keeps it dry, better organized and easier to read.
 ```
 
 ## jQuery
@@ -68,7 +75,7 @@ Select all that apply:
 ```
 [] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[x] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
@@ -91,7 +98,11 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+function doSomething(thingToDo){
+  var thingToDo = function(){
+    console.log("All the things!");
+  }
+}
 ```
 
 ### Question #8
@@ -100,5 +111,10 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+//VJS
+var function clickIt(){
+  
+}
+
+//jQ
 ```
