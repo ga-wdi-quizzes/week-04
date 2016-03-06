@@ -53,10 +53,13 @@ var Panda = function(name, age) {
   this.age = age;
   this.num_bamboo_eaten = 0;
 }
+
 ```
 Your Answer:
 ```js
-// your code here
+Panda.prototype.eat_bamboo = function() {
+  this.num_bamboo_eaten += 1;
+}
 ```
 
 ### Question #4
@@ -64,8 +67,8 @@ Your Answer:
 Describe the importance of using object-oriented programming.
 
 Your Answer:
-```js
-// your answer here
+```
+OOP allows you to bypass many problems that may arise when you need to have multiple variables that will share similar characteristics. Instead of declaring multiple global variables, you can store information about that particular 'thing' in an object and easily create that particular object and others via a constructor function. Prototypes are also useful in DRYing up code (ex. not storing a method in every object).
 ```
 
 ## jQuery
@@ -76,10 +79,10 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
+[X] `$(".post").html()`
+[X] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
 
@@ -91,7 +94,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$('#greeting').on('click', function() {
+  $('body').append('<p>hello</p>')
+})
 ```
 
 ### Question #7
@@ -101,7 +106,17 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+
+function doSomething(thingToDo){
+  thingToDo()
+};
+
+function thingToDo(){
+  console.log("doin the thang")
+};
+
+doSomething(thingToDo);
+
 ```
 
 ### Question #8
@@ -110,5 +125,16 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+
+//Vanilla
+var clickThis = document.querySelector('.submit-quiz');
+clickThis.addEventListener('click', function() {
+alert('Great Job on Quiz 4!')
+});
+
+//jQuery
+$('.submit-quiz').on('click', function() {
+alert('Great Job on Quiz 4!')
+})
+
 ```
