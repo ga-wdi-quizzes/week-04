@@ -16,7 +16,7 @@ the square brackets (for multiple-choice questions).
 What are constructor functions and the `new` keyword? What is a prototype? Describe an example of when we would use a constructor function versus a prototype.
 
 Your Answer:
-```text
+```The constructor function creates an object prototype. When you say NEW, you're calling the constructor function and you create a new object... I think .
 
 ```
 
@@ -28,8 +28,24 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 
 Your Answer:
 
-```js
-// your code here
+```
+** creating the constructor:
+
+function Instructor(name){
+  this.name = name;
+  this.givesHomework = function(assignment){
+    console.log(this.name + "gives the students" + assignment + " for Friday's homwork" );
+  }
+}
+
+** creating a new constructor function named robin..
+
+var Robin = new Instructor("Robin");
+
+** calling the Robin fxn
+
+Robin.givesHomework("Intro to Ruby");
+
 
 ```
 ### Question #3
@@ -46,7 +62,9 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+Panda.prototype.eat_bamboo = function(){
+  this.num_bamboo_eaten += 1;
+}
 ```
 
 ### Question #4
@@ -55,7 +73,7 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-// your answer here
+OOJS is important to clean up code. Abstraction, encapsulation and modularity. Objects are much cleaner and organized.
 ```
 
 ## jQuery
@@ -66,9 +84,9 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[x] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[x] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
@@ -81,7 +99,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$("#greeting").on.("click", function(){
+  $("body").append("<p>hello</p>");
+});
 ```
 
 ### Question #7
@@ -91,7 +111,11 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+function doSomething(thingToDo){
+  thingToDo();
+}
+
+doSomething();
 ```
 
 ### Question #8
@@ -100,5 +124,12 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+var button = document.querySelector(".submit-quiz");
+button.addEventListener("click", function(){
+  alert("great Job dickhead!")
+});
+
+$(".submit-quiz").on("click", function(){
+  alert("great job buttwad!")
+});
 ```
