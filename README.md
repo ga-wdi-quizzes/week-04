@@ -17,7 +17,8 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
-
+Constructor functions allow you to easily replicate an object by passing in arguments - by using the 'new' keyword when running the function. A prototype allows you to declare methods/attributes for objects at a 'global' level for that particular object.
+EX: You may use a constructor function for key-value pairs that are different between all of the objects (ex. passing in name, email address, phone number, etc.) and use a prototype for methods that will be useful for all of those objects (calling the method on one particular object to return name, address, etc.).
 ```
 
 ### Question #2
@@ -29,7 +30,16 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor(name, assignment) {
+  this.name = name;
+  this.assignment = assignment;
+  this.givesHomework = function() {
+    console.log(this.name + " gives student " +this.assignment+ " for Friday's homework.")
+  }
+}
+
+var Robin = new Instructor("Robin", "Intro to Ruby");
+Robin.givesHomework();
 
 ```
 ### Question #3
