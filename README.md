@@ -17,7 +17,9 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
+Constructor functions are used to create new instances of an object with shared properties; the 'new' keyword is only used with the constructor when creating a new instance. A prototype is a property associated with the constructor and it can be used to attach additional properties and methods to implement inheritance.
 
+A constructor is useful when you want to create multiple objects with the same properties and methods whereas prototype is used to add on additional properties and methods so that all new instance will inherit the new values.
 ```
 
 ### Question #2
