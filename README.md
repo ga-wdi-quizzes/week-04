@@ -19,7 +19,7 @@ Your Answer:
 ```text
 Constructor functions are used to create new instances of an object with shared properties; the 'new' keyword is only used with the constructor when creating a new instance. A prototype is a property associated with the constructor and it can be used to attach additional properties and methods to implement inheritance.
 
-A constructor is useful when you want to create multiple objects with the same properties and methods whereas prototype is used to add on additional properties and methods so that all new instance will inherit the new values.
+A constructor is useful when you want to create multiple objects with the same properties and methods whereas prototype is used to add on additional properties and methods so that all new instance will inherit the new values.h
 ```
 
 ### Question #2
@@ -56,8 +56,8 @@ Your Answer:
 Describe the importance of using object-oriented programming.
 
 Your Answer:
-```js
-// your answer here
+```text
+object-oriented programming is important in helping developers to organize their code. Using objects allows the data to be contained and developers can reference these objects and only pull out the information they wish to use at a given time.
 ```
 
 ## jQuery
@@ -68,9 +68,9 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[x] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[x] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
