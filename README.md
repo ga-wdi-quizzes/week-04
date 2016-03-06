@@ -17,6 +17,22 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
+Constructor functions are functions we can call in JavaScript to create new objects. Each object will have its own properties that can be manipulated independently of other created objects. The 'new' keyword is used for this object creation. It's a language token that signifies that the code in the constructor function is to be used to create the independent object and any properties and functions that type of object should inherit.
+
+A prototype is a function that all objects created by the constructor function inherits. A prototype can add properties or methods to the objects.
+
+Example:
+function Dog(breed, age) {
+  this.breed = breed;
+  this.age = age;
+}
+
+Dog.prototype.speak = function() {
+  console.log("Woof!");
+}
+
+var snoopy = new Dog("beagle", 5);
+snoopy.speak(); // Woof!
 
 ```
 
@@ -29,7 +45,16 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor(name) {
+  this.name = name;
+}
+
+Instructor.prototype.givesHomework = function(assignment) {
+  console.log(this.name + " gives the students " + assignment + " for Friday's homework.");
+}
+
+var robin = new Instructor("Robin");
+robin.givesHomework("Intro to Ruby"); // Robin gives the students Intro to Ruby for Friday's homework.
 
 ```
 ### Question #3
@@ -46,7 +71,9 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+Panda.prototype.eat_bamboo = function () {
+  this.num_bamboo_eaten++;
+};
 ```
 
 ### Question #4
@@ -54,8 +81,10 @@ Your Answer:
 Describe the importance of using object-oriented programming.
 
 Your Answer:
-```js
-// your answer here
+```text
+OOP leads to cleaner, shorter code because less needs to be repeated. Duplication of code is often fraught with danger, especially if changes need to be made later.
+
+It also helps make programming easier by allowing the programmer to abstract concepts into simple blueprints that can be manipulated.
 ```
 
 ## jQuery
@@ -66,11 +95,11 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[x] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[x] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
-[] `document.querySelectorAll(".post").innerHTML`
+[x] `document.querySelectorAll(".post").innerHTML`
 ```
 
 ### Question #6
@@ -81,7 +110,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$('#greeting').on('click', function() {
+  $('body').append('<p>hello</p>')
+})
 ```
 
 ### Question #7
@@ -91,7 +122,13 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+function doSomething(thingToDo) {
+
+}
+
+function thingToDo() {
+  alert('I am doing the thing')
+}
 ```
 
 ### Question #8
@@ -100,5 +137,12 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+var button = document.querySelector('.submit_quiz');
+button.addEventListener('click', function() {
+  alert('Great Job on Quiz 4!');
+});
+
+$('.submit_quiz').on('click', function() {
+  alert('Great Job on Quiz 4!');
+});
 ```
