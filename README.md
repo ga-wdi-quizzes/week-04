@@ -17,7 +17,21 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
+A constructor function is used in OOP so that if an object 'type' is used multiple times, we don't have to redefine it each time. The 'new' keyword is used to call the constructor function and creates/returns the new object.
 
+A prototype is a way to get rid of methods/functions that would be duplicated each time a constructor function is called.
+
+ex. function Person(name, height) {
+  this.name = name;
+  this.height = height
+}
+
+    Person.prototype.species = "Homo Sapien";
+
+var charles = new Person("Charles", "5'11'")
+
+charles.name = "Charles"
+charles.species = "Homo Sapien"
 ```
 
 ### Question #2
