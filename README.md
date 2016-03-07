@@ -57,7 +57,9 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+Panda.prototype.eat_bamboo = function (){
+  this.num_bamboo_eaten += 1;
+}
 ```
 
 ### Question #4
@@ -118,5 +120,17 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+// Javascript
+var quiz  = document.querySelector(".submit-quiz")
+
+function submitQuiz(){
+  alert("Great Job on Quiz 4!");
+}
+
+quiz.addEventListener("click",submitQuiz);
+
+// JQuery
+$(".submit-quiz").click(function(){
+  alert("Great Job on Quiz 4!");
+});
 ```
