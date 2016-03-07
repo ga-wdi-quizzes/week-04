@@ -16,8 +16,16 @@ the square brackets (for multiple-choice questions).
 What are constructor functions and the `new` keyword? What is a prototype? Describe an example of when we would use a constructor function versus a prototype.
 
 Your Answer:
-```text
+```
+constructor functions are functions that are used to build an object.  
+They allow programmers to make multiple instances of an object.  
+Using the 'new' keyword when calling a constructor functions creates an instance
+of an object.
+Every object in Javascript has a prototype property that points to another object.
+Methods and properties defined on the prototpe property are available to all the objects made by the constructor.
 
+We use a constructor to make objects that share the same properties and methods.
+We use a prototype to define properties and mehtods that not all object instances will use.
 ```
 
 ### Question #2
@@ -28,8 +36,15 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 
 Your Answer:
 
-```js
-// your code here
+```
+function Instructor(name, assignment) {
+  this.name = name;
+  this.assignment = assignment;
+  givesHomework = function () {
+    this.name + " gives the students " + assignment + " for Friday's homework."
+  }
+}
+var Robin = new Instructor('Robin, ''Intro to Ruby');
 
 ```
 ### Question #3
@@ -45,8 +60,10 @@ var Panda = function(name, age) {
 }
 ```
 Your Answer:
-```js
-// your code here
+```
+Panda.prototype = function() {
+  this.num_bamboo_eaten++;
+}
 ```
 
 ### Question #4
@@ -54,8 +71,10 @@ Your Answer:
 Describe the importance of using object-oriented programming.
 
 Your Answer:
-```js
-// your answer here
+```
+object-oriented programming is important because it helps clean up programmers'
+code and helps it more closely model the real world. It helps code achieve
+abstraction, encapsulation, and modularity.
 ```
 
 ## jQuery
@@ -66,9 +85,9 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[x] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[x] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
@@ -80,8 +99,10 @@ Using jQuery, add an event listener for clicks on the button with the id
 body that says "hello".
 
 Your Answer:
-```js
-// your code here
+```
+$(#greeting).click(function() {
+  $('body').append('<p>hello</p>');
+})
 ```
 
 ### Question #7
@@ -90,8 +111,12 @@ Define a function called `doSomething`. It should take one argument, called
 `thingToDo`. When called, `doSomething` should invoke the `thingToDo` function. Demonstrate calling `doSomething` while passing in an argument.
 
 Your Answer:
-```js
-// write code here
+```
+function doSomething(thingToDo) {
+  var xyz = thingToDo;
+}
+
+doSomething(anotherFunction())
 ```
 
 ### Question #8
@@ -99,6 +124,12 @@ Your Answer:
 Once in Vanilla JS, and once in jQuery, write a function that adds an event listener for when a button with a class of "submit-quiz" is clicked. The event alerts a user "Great Job on Quiz 4!".
 
 Your Answer:
-```js
-// write code here
+```
+document.querySelector('.submit-quiz').addEventListener(function() {
+  alert('Great Job on Quiz 4!');
+  })
+$('.submit-quiz').click(function() {
+  alert('Great Job on Quiz 4!');
+  })
+
 ```
