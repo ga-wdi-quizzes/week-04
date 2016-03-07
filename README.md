@@ -16,8 +16,8 @@ the square brackets (for multiple-choice questions).
 What are constructor functions and the `new` keyword? What is a prototype? Describe an example of when we would use a constructor function versus a prototype.
 
 Your Answer:
-```text
-
+```
+A constructor function is a generic object that contains keys that you will can use to define objects that you create in the future. To create a new object using a constructor, you need to use the keyword "new" to declare the new object that you are creating to be based off the constructor you have created. A prototype is typically a method that you want attached to a constructor, but by creating it as a prototype you only run the function when it is called.
 ```
 
 ### Question #2
@@ -28,9 +28,18 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 
 Your Answer:
 
-```js
-// your code here
+```
+var Instructor = function(name, assignment) {
+  this.name = name;
+  this.assignment = assignment;
+  this.givesHomework = function() {
+    console.log(this.name + " gives the students " + this.assignment + " for Friday's homework.");
+  }
+}
 
+var Robin = new Instructor("Robin", "Intro to Ruby");
+
+Robin.givesHomework();
 ```
 ### Question #3
 
@@ -45,8 +54,18 @@ var Panda = function(name, age) {
 }
 ```
 Your Answer:
-```js
-// your code here
+```
+var Panda = function(name, age) {
+  this.name = name;
+  this.age = age;
+  this.num_bamboo_eaten = 0;
+  this.eat_bamboo = function() {
+    this.num_bamboo_eaten++;
+  }
+}
+
+Panda.eat_bamboo();
+
 ```
 
 ### Question #4
@@ -54,8 +73,8 @@ Your Answer:
 Describe the importance of using object-oriented programming.
 
 Your Answer:
-```js
-// your answer here
+```
+Object-oriented programming allows for cleaner and more organized code. By separating your concerns into objects, you avoid allowing it to grow too excessively and becoming hard to read and understand.
 ```
 
 ## jQuery
@@ -66,10 +85,10 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
+[X] `$(".post").html()`
+[X] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
 
@@ -80,8 +99,10 @@ Using jQuery, add an event listener for clicks on the button with the id
 body that says "hello".
 
 Your Answer:
-```js
-// your code here
+```
+$("#greeting").click(function() {
+  $("body").append("hello");
+})
 ```
 
 ### Question #7
@@ -90,8 +111,16 @@ Define a function called `doSomething`. It should take one argument, called
 `thingToDo`. When called, `doSomething` should invoke the `thingToDo` function. Demonstrate calling `doSomething` while passing in an argument.
 
 Your Answer:
-```js
-// write code here
+```
+function thingToDo() {
+  console.log("I'm doing things!");
+}
+
+function doSomething() {
+  thingToDo();
+}
+
+doSomething();
 ```
 
 ### Question #8
@@ -99,6 +128,16 @@ Your Answer:
 Once in Vanilla JS, and once in jQuery, write a function that adds an event listener for when a button with a class of "submit-quiz" is clicked. The event alerts a user "Great Job on Quiz 4!".
 
 Your Answer:
-```js
-// write code here
+```
+document.querySelector(".submit-quiz").addEventListener("click", submitQuiz);
+
+function submitQuiz() {
+  alert("Great job on Quiz 4!");
+}
+--
+function submitQuiz() {
+  alert("Great job on Quiz 4!");
+}
+
+$(".submit-quiz").click(submitQuiz);
 ```
