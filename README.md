@@ -104,9 +104,12 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// function doSomething(){
-//
-// }
+function doSomething(thingToDo){
+    function thingToDo (){    
+    }
+}
+
+doSomething("Sing a song!")
 ```
 
 ### Question #8
