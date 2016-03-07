@@ -16,7 +16,8 @@ the square brackets (for multiple-choice questions).
 What are constructor functions and the `new` keyword? What is a prototype? Describe an example of when we would use a constructor function versus a prototype.
 
 Your Answer:
-```text
+```constructor function are functions that define properties. prototype is the properties to inhertied to the new object created by new keyword.
+an example : if you just wanted student and the properties for student was the same.
 
 ```
 
@@ -29,8 +30,15 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+// function Instructor(name{
+this.name = name;
+this.givesassignment=function(assignment){
+  console.log(this.name + "give the students" + assignment + "for friday's homework")
+}
+})
 
+Instructor1 =new Instructor("robin")
+Instructor1.givesassignment("into to ruby")
 ```
 ### Question #3
 
@@ -55,7 +63,9 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```
-// your answer here
+// It keep coding dry so that you are not repeating information with slight differences
+Grouping properties of object is made is orangized
+
 ```
 
 ## jQuery
@@ -68,7 +78,7 @@ Select all that apply:
 ```
 [] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[x] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
@@ -81,7 +91,7 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+// $(#greeting).apend(body,.click)
 ```
 
 ### Question #7
