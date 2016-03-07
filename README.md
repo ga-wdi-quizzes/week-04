@@ -16,8 +16,11 @@ the square brackets (for multiple-choice questions).
 What are constructor functions and the `new` keyword? What is a prototype? Describe an example of when we would use a constructor function versus a prototype.
 
 Your Answer:
-```text
-
+```
+Constructors are any function used as a constructors
+the new keyword creates objects
+prototype is the function/special property of the object
+constructors are what we'd use to create the object and the prototype is what we'd use to Instantiate the property of the object
 ```
 
 ### Question #2
@@ -29,7 +32,15 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor(name) {
+  this.name = name;
+}
+
+Dog.prototype.givesHomework = function(assignment) { console.log(name+ "gives the students" + assignment + "for Friday's homework" }
+
+var instructor = new Instructor('Robin')
+instructor.givesHomework("Intro to Ruby")
+
 
 ```
 ### Question #3
@@ -45,8 +56,10 @@ var Panda = function(name, age) {
 }
 ```
 Your Answer:
-```js
-// your code here
+```
+ Panda.prototype.eat_bamboo = function(){
+  this.num_bamboo_eaten++;
+ }
 ```
 
 ### Question #4
@@ -55,7 +68,8 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-// your answer here
+It provides a clear modular structure for programs
+and makes it easier to reuse and recycle code
 ```
 
 ## jQuery
@@ -66,10 +80,10 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[*check*] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
+[*check*] `$(".post").html()`
+[*check*] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
 
@@ -81,7 +95,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$("#greeting").on("click", function(){
+  ("body").html("greeting")  
+});
 ```
 
 ### Question #7
@@ -91,7 +107,9 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+function doSomething(thingToDo){
+  console.log("I'm gonna "+ thingToDo + " this weekend. Wanna come?");
+}
 ```
 
 ### Question #8
@@ -100,5 +118,12 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+$(".submit-quiz").on("click", function(){
+  alert("Great Job on Quiz 4!");
+});
+
+document.querySelectorAll(".post")[0].addEventLinster("click", function(){
+  alert.("Great Job on Quiz 4!");
+});
+
 ```
