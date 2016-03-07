@@ -17,7 +17,7 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
-
+A construction function is like a standard function but it has objects we can use like an object literal. When a constructor function is made, you must use the 'new' keyword to initiate the function. When you type the constructor name and new, it creates a new object. a Prototype allows you to add new properties or methods to the existing constructor function.  
 ```
 
 ### Question #2
@@ -29,7 +29,14 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+
+function Instructor () {
+  name = name;
+  givesHomework = function (assignment) {
+    console.log("[name] gives the students [assignment] for Fridays homework.");
+  }
+  var Robin = new Instructor (givesHomework("Intro to Ruby"))
+}
 
 ```
 ### Question #3
@@ -55,7 +62,7 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```
-// your answer here
+It is important to use OOP becaue it allows our code to be DRY and we can target our object more affectively by creating various functions that target that one object.
 ```
 
 ## jQuery
@@ -66,9 +73,9 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[x] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[x] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
@@ -81,7 +88,8 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+
+$("#greeting").click($("body").append("<p> + 'hello' + </p>"));
 ```
 
 ### Question #7
@@ -91,7 +99,10 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+function doSomething (thingToDo) {
+  $("#Test")thingsToDo.click(doSomething);
+
+}
 ```
 
 ### Question #8
@@ -100,5 +111,8 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+$(".submit-quiz").click(function (){
+  alert("Great Job on Quiz 4!");
+})
+
 ```
