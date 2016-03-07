@@ -31,7 +31,16 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor (name){
+  this.name = name;
+  this.givesHomework = function (assignment){
+    console.log(this.name + " gives the students " + assignment + " for Friday's homework.")
+  }
+}
+
+var robin = new Instructor("Robin");
+
+robin.givesHomework("Intro to Ruby")
 
 ```
 ### Question #3
@@ -83,7 +92,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+// $("#greeting").addEventListener("click",function(){
+
+})
 ```
 
 ### Question #7
@@ -93,7 +104,9 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+// function doSomething(){
+//
+// }
 ```
 
 ### Question #8
