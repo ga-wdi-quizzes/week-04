@@ -90,7 +90,7 @@ Which of the following statements will work, assuming jQuery is loaded?
 [] `$(".post").innerHTML`
 [X] `$(".post").html()`
 [X] `document.querySelectorAll(".post")[0].innerHTML`
-[] `document.querySelectorAll(".post").innerHTML` // Not sure if this will work or not
+[] `document.querySelectorAll(".post").innerHTML`
 
 ```
 
