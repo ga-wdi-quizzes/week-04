@@ -17,7 +17,22 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
+Constructor functions are like class initializers in that they can create a new instance of an Object with attributes.
 
+Convention is to name them starting with a capital letter.
+
+New instances of objects using constructor functions are created using the `new` keyword.
+
+E.g. of a constructor:
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    var person = new Person("john", 31);
+    person.name // Returns "john"
+    person.age // Returns 31
 ```
 
 ### Question #2
@@ -29,8 +44,16 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor(name) {
+    this.name = name;
+}
+Instructor.prototype.givesHomework = function(assignment) {
+    console.log(this.name + " gives the students " + assignment +
+                " for Friday's homework.");
+};
 
+var instructor = new Instructor("Robin");
+instructor.givesHomework("Intro to Ruby");
 ```
 ### Question #3
 
@@ -46,7 +69,9 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+Panda.prototype.eat_bamboo = function() { // Wasn't sure if this was what was meant by instance method.  Also, isn't the convention to use camel case in JS? 
+    this.num_bamboo_eaten++;
+};
 ```
 
 ### Question #4
@@ -55,7 +80,10 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```
-// your answer here
+Object-oriented programming allows us to encapsulate objects, keeping data and
+the actions we take on them to be isolated from each other. By separating them,
+and only passing them messages they need to know about, we can reduce
+complexity, keep behavior more reliable, and make programs easier to understand.
 ```
 
 ## jQuery
@@ -66,10 +94,10 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
+[X] `$(".post").html()`
+[X] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
 
@@ -81,7 +109,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$("#greeting").on("click", function() {
+    $("body").append("<p>Hello</p>");
+});
 ```
 
 ### Question #7
@@ -91,7 +121,15 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+function doSomething(thingToDo) {
+    thingToDo();
+}
+// The following will print "Hello world!" to the console as doSomething takes
+// a function reference as its parameter, and calls it.  In this case, it's being
+// passed an anonymous function reference that console logs "Hello world!".
+doSomething(function() {
+    console.log("Hello world!");
+});
 ```
 
 ### Question #8
@@ -100,5 +138,14 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+// Vanilla JS
+var submit = document.querySelector("button.submit-quiz");
+submit.addEventListener("click", function() {
+    alert("Great Job on Quiz 4!");
+});
+
+// JQuery
+$("button.submit-quiz").on("click", function() {
+    alert("Great Job on Quiz 4!");
+});
 ```
