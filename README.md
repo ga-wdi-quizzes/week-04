@@ -92,9 +92,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// $("#greeting").addEventListener("click",function(){
-
-})
+$("#greeting").click(function(){
+  $("body").append("Hello");
+});
 ```
 
 ### Question #7
