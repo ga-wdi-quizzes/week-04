@@ -17,6 +17,11 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
+A constructor is a type of function. You make it just like a regular function: function Student(){} except now the title of the function must be capital, and you create methods inside of it.
+This allows you to create many "Student"s and not effect each new object when you change another.
+The 'new' keyword is what you use to create a new instance of the object.
+A prototype allows you to make your code more DRY by eliminating functions within the constructor that would be duplicated every time you create a new object.
+A function inside of a constructor is best when you will not be creating many instances. Otherwise it's best to make prototypes, you will use less memory because all instances will point to same function instead of each individuals function.
 
 ```
 
@@ -30,6 +35,15 @@ Your Answer:
 
 ```js
 // your code here
+function Instructor(name){
+    this.name = name;
+    this.givesHomework = function(assignment){
+        console.log(this.name + " gives the students " + assignment + " for Friday's homework.");
+    }
+}
+
+var mrSteve = new Instructor("Mr. Steve");
+mrSteve.givesHomework("math");
 
 ```
 ### Question #3
@@ -47,6 +61,15 @@ var Panda = function(name, age) {
 Your Answer:
 ```js
 // your code here
+Panda.prototype.eat_bamboo = function(){
+    return this.num_bamboo_eaten+=1;
+
+}
+
+//test it
+var beibei = new Panda("Beibei", 2);
+beibei.eat_bamboo();
+beibei.num_bamboo_eaten;
 ```
 
 ### Question #4
@@ -56,6 +79,7 @@ Describe the importance of using object-oriented programming.
 Your Answer:
 ```
 // your answer here
+// The more complex your site/app gets, the better it is not to hard code data in so that your code can be re-useable as data changes. It allows for code to be more DRY as well and better organized.
 ```
 
 ## jQuery
@@ -66,10 +90,10 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
+[X] `$(".post").html()`
+[X] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
 
@@ -82,6 +106,9 @@ body that says "hello".
 Your Answer:
 ```js
 // your code here
+$("#greeting").on("click", function(){
+    $("body").append('<p>hello.</p>');
+})
 ```
 
 ### Question #7
@@ -92,6 +119,11 @@ Define a function called `doSomething`. It should take one argument, called
 Your Answer:
 ```js
 // write code here
+function doSomething(thingToDo) {
+    alert("I have to " + thingToDo);
+}
+
+doSomething("go to the store.");
 ```
 
 ### Question #8
@@ -101,4 +133,12 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 Your Answer:
 ```js
 // write code here
+var mybtn = document.querySelector(".submit-quiz")
+mybtn.addEventListener("click", function() {
+    alert("Great Job on Quiz 4!");
+})
+
+$(".submit-quiz").on("click", function(){
+    alert("Great Job on Quiz 4!");
+})
 ```
