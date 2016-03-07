@@ -54,7 +54,7 @@ Your Answer:
 Describe the importance of using object-oriented programming.
 
 Your Answer:
-```js
+```
 // your answer here
 ```
 
