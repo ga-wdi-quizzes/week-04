@@ -52,6 +52,8 @@ Instructor.prototype.givesHomework = function(assignment) {
                 " for Friday's homework.");
 };
 
+var instructor = new Instructor("Robin");
+instructor.givesHomework("Intro to Ruby");
 ```
 ### Question #3
 
