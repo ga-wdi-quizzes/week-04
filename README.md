@@ -31,7 +31,7 @@ ex. function Person(name, height) {
 var charles = new Person("Charles", "5'11'")
 
 charles.name = "Charles"
-charles.species = "Homo Sapien"
+charles.species() = "Homo Sapien"
 ```
 
 ### Question #2
@@ -43,8 +43,16 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+function Instructor(name) {
+  var self = this;
+  this.name = name;
+  this.givesHomework = function(assignment) {
+    console.log(self.name + " gives the students " + assignment + " for Friday's homework.")
+  };
+}
 
+var robin = new Instructor("Robin")
+robin.givesHomework("Intro to Ruby")
 ```
 ### Question #3
 
@@ -60,7 +68,11 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+Panda.prototype = {
+  eat_bamboo: function() {
+    this.num_bamboo_eaten++;
+  }
+}
 ```
 
 ### Question #4
@@ -69,7 +81,10 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-// your answer here
+OOP allows us to model our code more closely to the external world. It helps us achieve:
+  Abstraction
+  Encapsulation
+  Modularity
 ```
 
 ## jQuery
@@ -80,9 +95,9 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[X] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
@@ -95,7 +110,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$("#greeting").click(function() {
+  $("p").append("hello")
+})
 ```
 
 ### Question #7
@@ -105,7 +122,11 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+function doSomething(thingToDo) {
+  console.log(thingToDo + " is done.")
+};
+
+doSomething();
 ```
 
 ### Question #8
@@ -114,5 +135,13 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+function feedback() {
+  alert("Great Job on Quiz 4!");
+}
+document.querySelector("submit-quiz").addEventListener("click", feedback)
+
+
+$(".submit-quiz").click(function (){
+  alert("Great Job on Quiz 4!");
+})
 ```
