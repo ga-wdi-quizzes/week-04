@@ -33,6 +33,15 @@ Your Answer:
 
 ```js
 // your code here
+function instructor (){
+  this.name = name;
+  this.givesHomework = function(assignment){
+    console.log(this.name + " gives the students " + assignment + " for Friday's homework.");
+  }
+
+  var Robin = new instructor("Robin");
+  Robin.givesHomework("Intro to Ruby");
+}
 
 ```
 ### Question #3
@@ -50,6 +59,10 @@ var Panda = function(name, age) {
 Your Answer:
 ```js
 // your code here
+Panda.prototype.eat_bamboo = function () {
+  // increase number of bamboo eaten by 1
+   this.num_bamboo_eaten++;
+ }
 ```
 
 ### Question #4
@@ -59,6 +72,7 @@ Describe the importance of using object-oriented programming.
 Your Answer:
 ```
 // your answer here
+OOP makes it easy to maintain and modify existing code as new objects can be created with small differences to existing ones.
 ```
 
 ## jQuery
@@ -69,11 +83,11 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
-[] `document.querySelectorAll(".post").innerHTML`
+[X] `$(".post").html()`
+[X] `document.querySelectorAll(".post")[0].innerHTML`
+[X] `document.querySelectorAll(".post").innerHTML`
 ```
 
 ### Question #6
@@ -85,6 +99,12 @@ body that says "hello".
 Your Answer:
 ```js
 // your code here
+$("#greeting").click(function(){
+  // create new pargaragh
+  var greet = $("<p>Hello</p>");
+  // append new pargaragh to body
+   $("body").append(greet);
+})
 ```
 
 ### Question #7
@@ -95,6 +115,15 @@ Define a function called `doSomething`. It should take one argument, called
 Your Answer:
 ```js
 // write code here
+// declare function thingToDo
+function thingToDo();
+// delcare function doSomething
+function doSomething(thingToDo){
+  // invoke function thingToDo
+function thingToDo();  
+}
+
+doSomething(thingToDo);
 ```
 
 ### Question #8
@@ -104,4 +133,16 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 Your Answer:
 ```js
 // write code here
+// Select element by class and save in a variable
+var Quiz = document.querySelector(".submit-quiz");
+// add eventlistener to the element
+  Quiz.addEventListener("click", function() {
+    // display alert when element is clicked
+    alert("Great Job on Quiz 4!");
+  })
+ //select element by class name and attach event listener
+  $(".submit-quiz").click(function() {
+    // display alert when clicked
+   alert("Great Job on Quiz 4!");
+ })
 ```
