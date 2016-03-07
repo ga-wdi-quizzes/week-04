@@ -17,6 +17,7 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
+constructor function is a function that helps in creating new multiple similar objects. New keyword is used when creating those multiple objects. In constructor function there are multiple instances of a constructor function. Prototype is an object where other objects can be created. Constructor function has keys prototype does not.  
 
 ```
 
@@ -29,7 +30,18 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+
+// constructor with name
+function Instructor(name){
+  this.name = name;
+  // giveshomework is a method on this function
+  this.givesHomework = function(assignment){
+    console.log(this.name + " gives the students " + assignment + " for Friday's homework.");
+  }
+}
+var instructor = new Instructor("Robin");
+instructor.givesHomework("Intro to Ruby");
+
 
 ```
 ### Question #3
@@ -46,7 +58,11 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+panda.prototype.eat_bamboo = function(){
+  this.num_bamboo_eaten = 1 + num_bamboo_eaten
+}
+
+
 ```
 
 ### Question #4
@@ -55,7 +71,7 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-// your answer here
+OOP shortens the amount of code written and it is easier to read.
 ```
 
 ## jQuery
@@ -66,9 +82,9 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
+[X] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
@@ -81,7 +97,13 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+
+$(document).ready(){
+  $("#greeting").click(function(){
+    $("body").append("<p>hello</p>");
+  });
+}
+
 ```
 
 ### Question #7
@@ -91,7 +113,17 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+
+function doSomething(thingtoDo){
+
+}
+
+doSomething(function(){
+
+});
+
+
+
 ```
 
 ### Question #8
@@ -100,5 +132,18 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+$(document).ready(){
+
+  $(".submit-quiz").click(function(){
+    alert("great job on quiz");
+  });
+}
+
+  var button = document.querySelector(".submit-quiz");
+  button.addEventListner("click", function(){
+    alert("great job on quiz");
+  });
+
+
+
 ```
