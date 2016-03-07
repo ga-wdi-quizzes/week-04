@@ -86,11 +86,11 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 ```text
 
-[X] `$(".post").css("background", "peachpuff")` // sets element with class of post to bg-color of #ffdab9
-[] `$(".post").innerHTML` // mixes jQuery and Vanilla JS, so won't work
-[X] `$(".post").html()` // .html() "getter" method
-[] `document.querySelectorAll(".post")[0].innerHTML` // mixes jQuery and Vanilla JS, so won't work
-[X] `document.querySelectorAll(".post").innerHTML` // Vanilla JS
+[X] `$(".post").css("background", "peachpuff")`
+[] `$(".post").innerHTML`
+[X] `$(".post").html()`
+[X] `document.querySelectorAll(".post")[0].innerHTML`
+[] `document.querySelectorAll(".post").innerHTML` // Not sure if this will work or not
 
 ```
 
