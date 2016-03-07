@@ -17,7 +17,9 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
-
+constructor functions is a javascript function that calls a normal function that uses a new keyword.
+"New" keyword are attributes that are
+prototypes are a basis in which other functions pulls from.
 ```
 
 ### Question #2
@@ -30,6 +32,15 @@ Your Answer:
 
 ```js
 // your code here
+var givesHomework = function(name, assignment){
+  this.name = name;
+  this.assignment = assignment;
+  this.date= date;
+  this.submit= 0;
+}
+
+var name = new name (Robin);
+var assignment= new assignment ("Intro_to_Ruby");
 
 ```
 ### Question #3
@@ -47,6 +58,11 @@ var Panda = function(name, age) {
 Your Answer:
 ```js
 // your code here
+var value = parseInt($('#eat_bamboo').html());
+  value++;
+  $(#eat_bamboo).html(value);
+} 1);
+
 ```
 
 ### Question #4
@@ -56,6 +72,7 @@ Describe the importance of using object-oriented programming.
 Your Answer:
 ```
 // your answer here
+object oriented programming makes the code neat and dry.
 ```
 
 ## jQuery
@@ -66,9 +83,9 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
-[] `$(".post").innerHTML`
-[] `$(".post").html()`
+[X] `$(".post").css("background", "peachpuff")`
+[X] `$(".post").innerHTML`
+[X] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
 [] `document.querySelectorAll(".post").innerHTML`
 ```
@@ -82,6 +99,9 @@ body that says "hello".
 Your Answer:
 ```js
 // your code here
+$("#greeting").click(function(){
+  alert.("hello")
+});
 ```
 
 ### Question #7
@@ -92,6 +112,9 @@ Define a function called `doSomething`. It should take one argument, called
 Your Answer:
 ```js
 // write code here
+  $(thingToDo).doSomething(function(){
+     thingToDo.doSomething()
+  })
 ```
 
 ### Question #8
@@ -101,4 +124,7 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 Your Answer:
 ```js
 // write code here
+$(".button").click(function(){
+   submit-quiz.button()
+});
 ```
