@@ -142,4 +142,3 @@ function submitQuiz() {
 }
 
 (".submit-quiz").click(submitQuiz);
-```
