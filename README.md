@@ -17,7 +17,13 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
+a function that makes new objects ex:
 
+Contstructor function(status, name){
+name: name,
+status: status
+]
+  myFunction = new Constructor
 ```
 
 ### Question #2
@@ -29,7 +35,13 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-// your code here
+Intructor function(name, assignment){
+name: name,
+givesHomework: function (){
+  console.log(name + ' gives the students ' + assignment + ' for Friday+"'"+'s homework.'"
+}
+]
+
 
 ```
 ### Question #3
@@ -46,7 +58,9 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-// your code here
+Panda.prototype.eat_bamboo = function(){
+  this.num_bamboo_eaten++;
+}
 ```
 
 ### Question #4
@@ -54,8 +68,8 @@ Your Answer:
 Describe the importance of using object-oriented programming.
 
 Your Answer:
-```js
-// your answer here
+```text
+provides a neat container for related data and methods
 ```
 
 ## jQuery
@@ -66,11 +80,11 @@ Which of the following statements will work, assuming jQuery is loaded?
 
 Select all that apply:
 ```
-[] `$(".post").css("background", "peachpuff")`
+[x] `$(".post").css("background", "peachpuff")`
 [] `$(".post").innerHTML`
-[] `$(".post").html()`
-[] `document.querySelectorAll(".post")[0].innerHTML`
-[] `document.querySelectorAll(".post").innerHTML`
+[x] `$(".post").html()`
+[x] `document.querySelectorAll(".post")[0].innerHTML`
+[x] `document.querySelectorAll(".post").innerHTML`
 ```
 
 ### Question #6
@@ -81,7 +95,9 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$('#greeting').on('click', function(){
+  $('body').append('<p>"hellp"</p>')
+})
 ```
 
 ### Question #7
@@ -91,7 +107,10 @@ Define a function called `doSomething`. It should take one argument, called
 
 Your Answer:
 ```js
-// write code here
+doSomething : function(thingToDo){
+  thingToDo(thingToDo);
+}
+doSomething('punch')
 ```
 
 ### Question #8
@@ -100,5 +119,6 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 
 Your Answer:
 ```js
-// write code here
+document.querySelectorAll(".submit-quiz").addEventListener('click', alert('Great Job on Quiz 4!'))
+$(".submit-quiz").on('click', alert('Great Job on Quiz 4!'))
 ```
