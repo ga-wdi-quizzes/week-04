@@ -17,7 +17,7 @@ What are constructor functions and the `new` keyword? What is a prototype? Descr
 
 Your Answer:
 ```text
-Constructor functions are used to create new objects in JavaScript.  The 'new' keyword is used when creating a new instance of the constructor object.  Prototypes are properties that exist on all functions and define what properties and methods are available to the object.  
+Constructor functions are used to create new objects in JavaScript.  The 'new' keyword is used when creating a new instance of the constructor object.  Prototypes are properties that exist on all functions and define what properties and methods are available to the object.  We could use a constructor to create several flower objects, perhaps with key-values such as color, region and species.  In addition to that, we might modify the constructor prototype to include properties the flower objects have in common, such as plant food given, hours of sunshine per day, etc.
 ```
 
 ### Question #2
@@ -29,10 +29,10 @@ Instantiate an instructor named 'Robin' and call its `givesHomework` method with
 Your Answer:
 
 ```js
-function Instructor(){
-  this.name: name,
-  this.givesHomework: function(assignment){
-    console.log(this.name + "gives the students " + assignment + " for Friday's homework.");
+function Instructor(name){
+  this.name = name;
+  this.givesHomework = function(assignment){
+    console.log(name + " gives the students " + assignment + " for Friday's homework.");
   }
 }
 
@@ -53,7 +53,10 @@ var Panda = function(name, age) {
 ```
 Your Answer:
 ```js
-
+Panda.prototype.eat_bamboo = function(){
+  this.num_bamboo_eaten++;
+  return this.num_bamboo_eaten;
+}
 ```
 
 ### Question #4
@@ -62,7 +65,7 @@ Describe the importance of using object-oriented programming.
 
 Your Answer:
 ```js
-Using OOP is important because it allows developers to encapsulate their code.  This keeps it dry, better organized and easier to read.
+Using OOP is important because it allows developers to better organize their code, keep it dry, and write code that represents real world events while managing different types of complex data.
 ```
 
 ## jQuery
@@ -77,7 +80,7 @@ Select all that apply:
 [] `$(".post").innerHTML`
 [x] `$(".post").html()`
 [] `document.querySelectorAll(".post")[0].innerHTML`
-[] `document.querySelectorAll(".post").innerHTML`
+[x] `document.querySelectorAll(".post").innerHTML`
 ```
 
 ### Question #6
@@ -88,7 +91,7 @@ body that says "hello".
 
 Your Answer:
 ```js
-// your code here
+$("#greeting").on("click", this.append("<p>hello</p>"));
 ```
 
 ### Question #7
@@ -112,9 +115,15 @@ Once in Vanilla JS, and once in jQuery, write a function that adds an event list
 Your Answer:
 ```js
 //VJS
-var function clickIt(){
-  
-}
+var button = document.querySelector(".submit-quiz");
+button.addEventListener("click", submitQuiz);
+
+function submitQuiz(){
+  alert("Great Job on Quiz 4!")
+};
 
 //jQ
+$(".submit-quiz").click(function(){
+  alert("Great Job on Quiz 4!");
+});
 ```
